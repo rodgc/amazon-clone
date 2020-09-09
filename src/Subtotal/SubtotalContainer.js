@@ -1,10 +1,10 @@
-import React from 'react'
-import SubtotalDisplay from './SubtotalDisplay'
+import React from "react";
+import SubtotalDisplay from "./SubtotalDisplay";
+import { useStateValue } from "../StateProvider";
 
 function SubtotalContainer() {
-    return (
-        <SubtotalDisplay />
-    )
+  const [{ basket }] = useStateValue();
+  return <SubtotalDisplay basket={basket} />;
 }
 
-export default SubtotalContainer
+export default SubtotalContainer;

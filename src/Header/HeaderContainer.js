@@ -1,10 +1,10 @@
-import React from 'react'
-import HeaderDisplay from './HeaderDisplay'
+import React from "react";
+import HeaderDisplay from "./HeaderDisplay";
+import { useStateValue } from "../StateProvider";
 
 function HeaderContainer() {
-    return (
-        <HeaderDisplay />
-    )
+  const [{ basket }, dispatch] = useStateValue();
+  return <HeaderDisplay basket={basket} />;
 }
 
-export default HeaderContainer
+export default HeaderContainer;

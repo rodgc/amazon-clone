@@ -1,14 +1,15 @@
+import { ADD_TO_BASKET } from "./ActionTypes";
 export const initialState = {
   basket: [],
 };
 
-export const ActionTypes = {
-  ADD_TO_BASKET: "ADD_TO_BASKET",
-};
+// Selector
+export const getBasketTotal = (basket) =>
+  basket?.reduce((amount, item) => item.price + amount, 0);
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case ActionTypes.ADD_TO_BASKET:
+    case ADD_TO_BASKET:
       return { ...state, basket: [...state.basket, action.item] };
 
     default:

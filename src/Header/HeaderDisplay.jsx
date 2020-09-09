@@ -4,7 +4,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import "./Header.css";
 
-function HeaderDisplay() {
+function HeaderDisplay({ basket }) {
   return (
     <div className="header">
       <Link to="/">
@@ -32,10 +32,10 @@ function HeaderDisplay() {
           <span className="header__optionLineTwo">Prime</span>
         </div>
         <Link to="/checkout">
-        <div className="header__optionBasket">
-          <ShoppingBasketIcon />
-          <span className="header__optionLineTwo header__basketCount">0</span>
-        </div>
+          <div className="header__optionBasket">
+            <ShoppingBasketIcon />
+  <span className="header__optionLineTwo header__basketCount">{basket?.length}</span>
+          </div>
         </Link>
       </div>
     </div>
