@@ -3,7 +3,7 @@ import HeaderDisplay from "./HeaderDisplay";
 import { useStateValue } from "../StateProvider";
 
 function HeaderContainer() {
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket }] = useStateValue();
   return <HeaderDisplay basket={basket} />;
 }
 
