@@ -14,10 +14,10 @@ function CheckoutDisplay({ basket, user }) {
         />
 
         <div>
-          <h3>Hello, {user ? user?.email : 'Guest'}</h3>
+          <h3>Hello, {user ? user?.email : "Guest"}</h3>
           <h2 className="checkout__title">Your shopping Basket</h2>
-          {basket.map((item) => (
-            <CheckoutProduct {...item} />
+          {basket.map((item, key) => (
+            <CheckoutProduct key={key} {...item} />
           ))}
         </div>
       </div>
