@@ -21,12 +21,10 @@ function ProductDisplay({ id, title, image, price, rating, addToBasket }) {
         </div>
       </div>
       <img src={image} alt={title} />
-      <button
-        onClick={() =>
-          addToBasket({ id, title, image, price, rating, addToBasket })
-        }
-      >
-        Add to Basket
+      <button onClick=
+        {() => addToBasket({ id, title, image, price, rating })}>
+        Add
+        to Basket
       </button>
     </div>
   );
