@@ -3,7 +3,7 @@ import "./Checkout.css";
 import { Subtotal } from "../Subtotal";
 import { CheckoutProduct } from "../CheckoutProduct";
 
-function CheckoutDisplay({ basket }) {
+function CheckoutDisplay({ basket, user }) {
   return (
     <div className="checkout">
       <div className="checkout__left">
@@ -14,6 +14,7 @@ function CheckoutDisplay({ basket }) {
         />
 
         <div>
+          <h3>Hello, {user ? user?.email : 'Guest'}</h3>
           <h2 className="checkout__title">Your shopping Basket</h2>
           {basket.map((item) => (
             <CheckoutProduct {...item} />

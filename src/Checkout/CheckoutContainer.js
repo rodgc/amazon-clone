@@ -3,8 +3,8 @@ import CheckoutDisplay from "./CheckoutDisplay";
 import { useStateValue } from "../StateProvider";
 
 function CheckoutContainer() {
-  const [{ basket }] = useStateValue();
-  return <CheckoutDisplay basket={basket} />;
+  const [{ basket, user }] = useStateValue();
+  return <CheckoutDisplay basket={basket} user={user}/>;
 }
 
 export default CheckoutContainer;
