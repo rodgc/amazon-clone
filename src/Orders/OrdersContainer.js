@@ -14,14 +14,12 @@ function OrdersContainer() {
         .collection("orders")
         .orderBy("created", "desc")
         .onSnapshot((snapshot) =>
-          {
-            console.log('Docs', snapshot.docs);  
-            setOrders(
+          setOrders(
             snapshot.docs.map((doc) => ({
               id: doc.id,
               data: doc.data(),
             }))
-          )}
+          )
         );
     } else {
       setOrders([]);
