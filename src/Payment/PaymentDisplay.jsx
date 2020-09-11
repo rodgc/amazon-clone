@@ -20,7 +20,7 @@ function PaymentDisplay({
     <div className="payment">
       <div className="payment__container">
         <h1>
-          Checkout (<Link to="/checkout">items</Link>)
+          Checkout (<Link to="/checkout">{basket.length} items</Link>)
         </h1>
         <div className="payment__section">
           <div className="payment__title">
@@ -59,7 +59,7 @@ function PaymentDisplay({
                   prefix={"$"}
                 />
                 <button disabled={processing || disabled || succeeded}>
-                  <span>{processing ? <p>Processing</p> : "Buy NowÍ"}</span>
+                  <span>{processing ? <p>Processing</p> : "Buy Now!"}</span>
                 </button>
               </div>
               {error && <div>{error}</div>}

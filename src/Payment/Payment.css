@@ -50,3 +50,8 @@
   border-color: #a88734 #9c7e31 #846a29;
   color: #111;
 }
+
+.payment__details > form > div > button:disabled{
+  background: lightgray;
+  cursor: not-allowed;
+}

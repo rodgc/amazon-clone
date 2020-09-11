@@ -32,8 +32,6 @@ function PaymentContainer() {
         },
       })
       .then(({ paymentIntent }) => {
-        // paymentIntent = payment confirmation
-
         db.collection("users")
           .doc(user?.uid)
           .collection("orders")
@@ -57,7 +55,7 @@ function PaymentContainer() {
   };
 
   const handleChange = (e) => {
-    setDisabled(e.empty);
+    setDisabled(!e.complete);
     setError(e.error ? e.error.message : "");
   };
 
