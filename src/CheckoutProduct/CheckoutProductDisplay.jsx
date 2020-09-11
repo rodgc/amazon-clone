@@ -8,6 +8,7 @@ function CheckoutProductDisplay({
   price,
   rating,
   removeFromBasket,
+  hideButton,
 }) {
   return (
     <div className="checkoutProduct">
@@ -27,7 +28,11 @@ function CheckoutProductDisplay({
               </span>
             ))}
         </div>
-        <button onClick={() => removeFromBasket(id)}>Remove form basket</button>
+        {!hideButton && (
+          <button onClick={() => removeFromBasket(id)}>
+            Remove form basket
+          </button>
+        )}
       </div>
     </div>
   );
